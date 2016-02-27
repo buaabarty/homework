@@ -9,6 +9,8 @@ import sklearn.feature_selection as feature_selection
 import sys
 import sklearn.tree as tree
 import sklearn.cross_validation as cross_validation
+import sklearn.metrics as metrics
+import pickle as pickle
 
 if __name__ == "__main__":
     # read data
@@ -27,10 +29,7 @@ if __name__ == "__main__":
     result['house '] = result['house'].astype('category')
 
     # print feature plot
-#    fig = plt.figure(1, figsize=(30, 30))
-#    ax = fig.add_subplot(111)
-#    bp = plt.boxplot(result['term'])
-#    fig.savefig('fig1.png', bbox_inches='tight')
+    bp = plt.boxplot(result['term'])
 
     # feature selection
     corrmatrix = result.corr(method='spearman')
@@ -63,3 +62,33 @@ if __name__ == "__main__":
     test_est = clf.predict(test_data)
     test_est_p = clf.predict_proba(test_data)[:,1]
     print pd.DataFrame({'test_target':test_target, 'test_est':test_est, 'test_est_p':test_est_p}).T
+
+
+    print metrics.confusion_matrix(test_target, test_est, labels=[0,1])
+    print metrics.classification_report(test_target, test_est)
+    print pd.DataFrame(zip(data.columns, clf.feature_importances_))
+
+    red, blue = sns.color_palette("Set1",2)
+
+    fig = plt.figure(1, figsize=(30, 30))
+
+    fpr_test, tpr_test, th_test = metrics.roc_curve(test_target, test_est_p)
+    fpr_train, tpr_train, th_train = metrics.roc_curve(train_target, train_est_p)
+    plt.figure(figsize=[6, 6])
+    plt.plot(fpr_test, tpr_test, color=blue)
+    plt.plot(fpr_train, tpr_train, color=red)
+    plt.title('ROC curve')
+
+    # save model
+#    model_file = open(r'clf.model', 'wb')
+#    pickle.dump(clf, model_file)
+#    model_file.close()
+
+    # load model
+    model_load_file = open(r'clf.model', 'rb')
+    model_load = pickle.load(model_load_file)
+    model_load_file.close()
+    test_est_load = model_load.predict(test_data)
+    pd.crosstab(test_est_load, test_est)
+
+

@@ -1,0 +1,117 @@
+result                   int64
+term                     int64
+limit                    int64
+user_has_car             int64
+user_loan_experience     int64
+qid77                    int64
+cash_receipts            int64
+user_income_by_card      int64
+user_work_period         int64
+qid123                   int64
+qid57                    int64
+car_value                int64
+spam_score               int64
+mobile_verify            int64
+quality                  int64
+id                       int64
+married                  int64
+house                    int64
+tax                      int64
+socialsecurity          object
+user_id                 object
+product_id              object
+dtype: object
+result (array([ 92834.,  92834.]), array([ 0.,  0.]))
+term (array([ 92834.        ,   1376.18661939]), array([  0.00000000e+000,   3.14165835e-301]))
+limit (array([ 92834.        ,  69479.59389581]), array([ 0.,  0.]))
+user_has_car (array([  9.28340000e+04,   2.46494203e+01]), array([  0.00000000e+00,   6.87654370e-07]))
+user_loan_experience (array([  9.28340000e+04,   1.40872587e+01]), array([ 0.        ,  0.00017452]))
+qid77 (array([  9.28340000e+04,   7.21568969e+01]), array([  0.00000000e+00,   1.98749867e-17]))
+cash_receipts (array([ 92834.        ,  45129.72324026]), array([ 0.,  0.]))
+user_income_by_card (array([ 92834.        ,  64264.48696674]), array([ 0.,  0.]))
+user_work_period (array([ 92834.        ,   2285.63165298]), array([ 0.,  0.]))
+qid123 (array([  9.28340000e+04,   1.88104618e+01]), array([  0.00000000e+00,   1.44373030e-05]))
+qid57 (array([  9.28340000e+04,   3.88267043e-01]), array([ 0.        ,  0.53321173]))
+car_value (array([ 92834.        ,    101.08469581]), array([  0.00000000e+00,   8.81332172e-24]))
+spam_score (array([ 92834.        ,  15658.33736657]), array([ 0.,  0.]))
+mobile_verify (array([ 92834.       ,    559.2324246]), array([  0.00000000e+000,   1.23478882e-123]))
+quality (array([ 92834.        ,    124.82053384]), array([  0.00000000e+00,   5.57121904e-29]))
+id (array([  9.28340000e+04,   4.93280411e+01]), array([  0.00000000e+00,   2.16544892e-12]))
+married (array([ 92834.        ,    320.20287968]), array([  0.00000000e+00,   1.30830710e-71]))
+house (array([  9.28340000e+04,   6.88948340e+01]), array([  0.00000000e+00,   1.03856517e-16]))
+tax (array([ 92834.        ,    178.52933407]), array([  0.00000000e+00,   1.01515763e-40]))
+socialsecurity user_id product_id socialsecurity  user_has_car  (array([  9.28340000e+04,   2.46494203e+01]), array([  0.00000000e+00,   6.87654370e-07]))
+qid77  (array([  9.28340000e+04,   7.21568969e+01]), array([  0.00000000e+00,   1.98749867e-17]))
+quality  (array([ 92834.        ,    124.82053384]), array([  0.00000000e+00,   5.57121904e-29]))
+id  (array([  9.28340000e+04,   4.93280411e+01]), array([  0.00000000e+00,   2.16544892e-12]))
+married  (array([ 92834.        ,    320.20287968]), array([  0.00000000e+00,   1.30830710e-71]))
+tax  (array([ 92834.        ,    178.52933407]), array([  0.00000000e+00,   1.01515763e-40]))
+house  (array([  9.28340000e+04,   6.88948340e+01]), array([  0.00000000e+00,   1.03856517e-16]))
+   result  term  limit  user_has_car  user_loan_experience  qid77  \
+0       0    12      5             1                    10      3   
+1       1    12      5             0                     0      3   
+2       1    24     10             1                     5      1   
+3       0    24     10             1                     0      3   
+4       1    60     20             1                     0      1   
+
+   cash_receipts  user_income_by_card  user_work_period  qid123  qid57  \
+0              0                 5000                12       0      3   
+1           4000                    0                 6       0      3   
+2              0                 5000                12       1      3   
+3              0                 6000                12       2      3   
+4           2000                12000                48       2      3   
+
+   car_value  spam_score  mobile_verify  quality  id  married  house  tax  
+0         12           0              0        0   1        0      1    0  
+1         12           0              0        1   0        0      0    0  
+2         15           0              2        1   1        0      0    0  
+3         12           0              2        1   1        0      0    0  
+4         12           0              0        1   1        0      0    0  
+               107191    34774    21024     99021     49446     194     \
+test_est     0.000000  0.000000  0.00000  0.000000  0.000000  0.000000   
+test_est_p   0.281155  0.305928  0.20739  0.281155  0.390411  0.240962   
+test_target  0.000000  0.000000  0.00000  1.000000  0.000000  1.000000   
+
+               28524     45079     61892     17740     ...       83362   \
+test_est     0.000000  0.000000  0.000000  0.000000    ...     0.000000   
+test_est_p   0.178536  0.217617  0.240962  0.058252    ...     0.108447   
+test_target  1.000000  0.000000  0.000000  0.000000    ...     0.000000   
+
+               15595     69290     120591    19436     33559     105867  \
+test_est     0.000000  0.000000  0.000000  0.000000  0.000000  0.000000   
+test_est_p   0.281155  0.416481  0.281155  0.305928  0.305928  0.281155   
+test_target  0.000000  0.000000  0.000000  1.000000  0.000000  0.000000   
+
+               111574    118785    6920    
+test_est     0.000000  0.000000  0.000000  
+test_est_p   0.344017  0.240962  0.053211  
+test_target  0.000000  0.000000  0.000000  
+
+[3 rows x 48814 columns]
+[[36810    97]
+ [11882    25]]
+             precision    recall  f1-score   support
+
+          0       0.76      1.00      0.86     36907
+          1       0.20      0.00      0.00     11907
+
+avg / total       0.62      0.75      0.65     48814
+
+                       0         1
+0                  limit  0.176198
+1           user_has_car  0.037041
+2   user_loan_experience  0.009282
+3                  qid77  0.025511
+4          cash_receipts  0.016398
+5    user_income_by_card  0.093337
+6       user_work_period  0.015459
+7                 qid123  0.017040
+8                  qid57  0.000000
+9              car_value  0.041816
+10            spam_score  0.146088
+11         mobile_verify  0.225378
+12               quality  0.084448
+13                    id  0.043967
+14               married  0.039826
+15                 house  0.024389
+16                   tax  0.003823
